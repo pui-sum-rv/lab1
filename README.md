@@ -21,7 +21,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 </pre>
 
 <p>These three characters "&gt;&gt;&gt;" indicate where we will write the command in the interpreter. In this document, the commands we enter into the interpreter will also be written in a text box, but they will have characters "&gt;&gt;&gt;" in front of them.</p>
-<p>Upišimo sada prvu python naredbu <code class="prettyprint lang- prettyprinted" style=""><span class="kwd">print</span><span class="pln"> </span><span class="str">"Hello World!"</span></code> like in the next example: </p>
+<p>Lets write the first Python command <code class="prettyprint lang- prettyprinted" style=""><span class="kwd">print</span><span class="pln"> </span><span class="str">"Hello World!"</span></code> like in the next example: </p>
 <pre class="interpreter">&gt;&gt;&gt; print ("Hello World!")
 Hello World!</pre>
 
@@ -119,19 +119,16 @@ a concise and comprehensive documentation is available.</p>
 </pre> 
 
 <ul>
-<li>Linija 1 defines an empty list. </li>
-<li>Linija 4 defines new list  whose elements are the integers 2 and 3, and another list whose elements are 2 and 4.</li>
-<li>Linija 7 sets element 0 to a new list. Now, the list in the variable <code class="prettyprint lang- prettyprinted" style=""><span class="pln">a</span></code>
+<li>Line 1 defines an empty list. </li>
+<li>Line 4 defines new list  whose elements are the integers 2 and 3, and another list whose elements are 2 and 4.</li>
+<li>Line 7 sets element 0 to a new list. Now, the list in the variable <code class="prettyprint lang- prettyprinted" style=""><span class="pln">a</span></code>
 contains two lists and one integer value. </li>
 <li>Line 10 sets the second element of the list to 0. Although there was a complex data type at index 2, this command simply replaces it with another value. </li>
-<li>Linija 13 assigns <code class="prettyprint lang- prettyprinted" style=""><span class="pln">b</span></code> the first element of the list to the variable <code class="prettyprint lang- prettyprinted" style=""><span class="pln">a</span></code>. </li>
-<li>Line 16 changes the value of the first element of the list <code class="prettyprint lang- prettyprinted" style=""><span class="pln">b</span></code> to 999, a budući da
-je cijela lista <code class="prettyprint lang- prettyprinted" style=""><span class="pln">b</span></code> zapravo isti objekt kao i nulti element liste <code class="prettyprint lang- prettyprinted" style=""><span class="pln">a</span></code>,
+<li>Line 13 assigns <code class="prettyprint lang- prettyprinted" style=""><span class="pln">b</span></code> the first element of the list to the variable <code class="prettyprint lang- prettyprinted" style=""><span class="pln">a</span></code>. </li>
+<li>Line 16 changes the value of the first element of the list <code class="prettyprint lang- prettyprinted" style=""><span class="pln">b</span></code> to 999, and since the whole list <code class="prettyprint lang- prettyprinted" style=""><span class="pln">b</span></code> zapravo isti objekt kao i nulti element liste <code class="prettyprint lang- prettyprinted" style=""><span class="pln">a</span></code>,
 vidimo da se promjena odražava i na nju. </li>
 </ul>
-<p>Element liste može biti bilo koji objekt. Pridruživanjem nekog elementa liste
-nekoj varijabli, toj varijabli se pridaje točno taj objekt. Ukoliko kasnije taj
-objekt promijenimo, promjena će se vidjeti i unutar liste.</p>
+<p>An element of a list can be any object. By assigning a list element to a variable, that variable refers to exactly that object. If we later change that object, the change will also be reflected within the list.</p>
 
 <pre>
 >>> a = ["pero", "djuro", "marko"]
@@ -148,22 +145,9 @@ File "", line 1, in
 TypeError: 'str' object does not support item assignment
 </pre>
 
-<p>U ovom primjeru vidimo pristupanje elementima na drugoj razini unutar
-liste. U ovom slučaju string <code class="prettyprint lang- prettyprinted" style=""><span class="str">"miki"</span></code> je pridjeljen nultom elementu liste, te
-smo u liniji 7 pristupili njegovom nultom elementu. Stringovi se u Pythonu
-uvelike ponašaju kao liste znakova, te je moguće pristupati pojedinim
-elementima, ili iterirati kroz njih u petljama. Također se vidi jedno
-zanimljivo svojstvo stringova u Pythonu, a to je da su nepromjenjivi. Jednom
-kreirani string se u memoriji ne može mjenjati. U liniji 1 smo stvorili listu
-sa tri elementa, sva tri su stringovi. U liniji 3 smo promjenili nulti element
-iz <code class="prettyprint lang- prettyprinted" style=""><span class="str">"pero"</span></code> u <code class="prettyprint lang- prettyprinted" style=""><span class="str">"miki"</span></code>. Ali nismo promijenili sam string u memoriji.
-Jednostavno smo stvorili u memoriji novi string i nulti element liste postavili
-na taj novi string. U liniji 7 vidimo kako pristupiti nultom znaku stringa
-<code class="prettyprint lang- prettyprinted" style=""><span class="str">"miki"</span></code>, ali u liniji 9 vidimo da taj znak ne možemo promijeniti. Mogli bi
-stvoriti novi string i postaviti ga umjesto ovog stringa, ali direktno
-mijenjanje vrijednosti unutar stringa je u Pythonu nemoguće. </p>
-<h5>Dodavanje u listu</h5>
-<p>Pogledajmo slijedeća dva primjera:</p>
+<p>In this example, we see access to elements at a secondary level within the list. In this case, the string <code class="prettyprint lang- prettyprinted" style=""><span class="str">"miki"</span></code> is assigned to the zero-th element of the list, and in line 7 we access its zero-th character. Strings in Python largely behave like lists of characters, allowing access to individual elements or iteration through them in loops. We also see an interesting property of strings in Python, which is that they are immutable. Once created, a string cannot be modified in memory. In line 1, we created a list with three elements, all of which are strings. In line 3, we changed the zero-th element from <code class="prettyprint lang- prettyprinted" style=""><span class="str">"pero"</span></code> to <code class="prettyprint lang- prettyprinted" style=""><span class="str">"miki"</span></code>. However, we did not change the original string in memory. We simply created a new string in memory and set the zero-th element of the list to this new string. In line 7, we see how to access the zero-th character of the string <code class="prettyprint lang- prettyprinted" style=""><span class="str">"miki"</span></code>, but in line 9 we see that this character cannot be changed. We could create a new string and set it in place of the existing string, but directly modifying the value inside a string is impossible in Python.</p>
+<h5>Adding to a list</h5>
+<p>Let's look at the following two examples:</p>
 
 <pre>
 >>> ulice = []
@@ -193,17 +177,9 @@ mijenjanje vrijednosti unutar stringa je u Pythonu nemoguće. </p>
 ['trpimirova', 'branimirova', 'osjecka', ['trpimirova', 'branimirova', 'osjecka']]
 </pre>
 
-<p>U prvom primjeru imamo praznu listu <code class="prettyprint lang- prettyprinted" style=""><span class="pln">ulice</span></code> u koju funkcijom <code class="prettyprint lang- prettyprinted" style=""><span class="pln">append</span><span class="pun">()</span></code>
-dodajemo stringove. Funkcija <code class="prettyprint lang- prettyprinted" style=""><span class="pln">append</span></code> dodaje svaki predani string kao objekt,
-te taj string tada zauzima jedan element liste. Vidimo da dodavanjem tri
-stringa lista <code class="prettyprint lang- prettyprinted" style=""><span class="pln">ulice</span></code> sada ima 3 elementa koji su predani stringovi (linija
-6).  Pogledajmo sada liniju 7, gdje dodajemo još jedan string u listu, ali ovaj
-puta operatorom <code class="prettyprint lang- prettyprinted" style=""><span class="pun">+=</span></code>. Sada će se u listu dodati svaki element zasebno. Kako
-se string zapravo ponaša kao lista znakova, <code class="prettyprint lang- prettyprinted" style=""><span class="pun">+=</span></code> dodaje svaki element stringa
-zasebno u listu <code class="prettyprint lang- prettyprinted" style=""><span class="pln">ulice</span></code>. </p>
-<p>Možda će biti jasnije na drugom primjeru. Ovdje vidimo da <code class="prettyprint lang- prettyprinted" style=""><span class="pun">+=</span></code> dodaje svaki
-element liste <code class="prettyprint lang- prettyprinted" style=""><span class="pln">jednosmjerne</span></code> u listu ulice kao zasebne elemente, dok <code class="prettyprint lang- prettyprinted" style=""><span class="pln">append</span><span class="pun">()</span></code> dodaje cijelu listu <code class="prettyprint lang- prettyprinted" style=""><span class="pln">jednosmjerne</span></code> u listu ulice kao jedan
-element. </p>
+<p>In the first example, we have an empty list <code class="prettyprint lang- prettyprinted" style=""><span class="pln">ulice</span></code> to which we add strings using the <code class="prettyprint lang- prettyprinted" style=""><span class="pln">append</span><span class="pun">()</span></code> function. The <code class="prettyprint lang- prettyprinted" style=""><span class="pln">append</span></code> function adds each given string as an object, and each string then takes up one element of the list. We see that by adding three strings, the list <code class="prettyprint lang- prettyprinted" style=""><span class="pln">ulice</span></code> now has 3 elements, which are the given strings (line 6). Now look at line 7, where we add another string to the list, but this time using the <code class="prettyprint lang- prettyprinted" style=""><span class="pun">+=</span></code> operator. This time, each element of the string is added separately to the list. Since a string behaves like a list of characters, <code class="prettyprint lang- prettyprinted" style=""><span class="pun">+=</span></code> adds each character of the string individually to the list <code class="prettyprint lang- prettyprinted" style=""><span class="pln">ulice</span></code>.</p>
+<p>It might be clearer in the second example. Here, we see that <code class="prettyprint lang- prettyprinted" style=""><span class="pun">+=</span></code> adds each element of the list <code class="prettyprint lang- prettyprinted" style=""><span class="pln">jednosmjerne</span></code> to the list <code class="prettyprint lang- prettyprinted" style=""><span class="pln">ulice</span></code> as separate elements, while <code class="prettyprint lang- prettyprinted" style=""><span class="pln">append</span><span class="pun">()</span></code> adds the entire list <code class="prettyprint lang- prettyprinted" style=""><span class="pln">jednosmjerne</span></code> to the list <code class="prettyprint lang- prettyprinted" style=""><span class="pln">ulice</span></code> as a single element.</p>
+
 <h4>tuple</h4>
 <p>Slijedeći tip podatka koji ćemo opisivati je <em>tuple</em>. Tuple je specifičan po
 tome što je nepromijenjiv. Može imati neograničen broj elemenata.  Vrijednosti
