@@ -181,14 +181,8 @@ TypeError: 'str' object does not support item assignment
 <p>It might be clearer in the second example. Here, we see that <code class="prettyprint lang- prettyprinted" style=""><span class="pun">+=</span></code> adds each element of the list <code class="prettyprint lang- prettyprinted" style=""><span class="pln">jednosmjerne</span></code> to the list <code class="prettyprint lang- prettyprinted" style=""><span class="pln">ulice</span></code> as separate elements, while <code class="prettyprint lang- prettyprinted" style=""><span class="pln">append</span><span class="pun">()</span></code> adds the entire list <code class="prettyprint lang- prettyprinted" style=""><span class="pln">jednosmjerne</span></code> to the list <code class="prettyprint lang- prettyprinted" style=""><span class="pln">ulice</span></code> as a single element.</p>
 
 <h4>tuple</h4>
-<p>Slijedeći tip podatka koji ćemo opisivati je <em>tuple</em>. Tuple je specifičan po
-tome što je nepromijenjiv. Može imati neograničen broj elemenata.  Vrijednosti
-unutar tuplea kada se postave, više se ne mogu mijenati. Tako ako
-stvorimo tuple koji sadrži dva objekta, više nije moguće dodati neki novi
-objekt, ili obrisati iz tuplea neki od objekata. Ipak to ne znači da se sami
-objekti koji su u tupleu ne mogu promijeniti. Ono što je sigurno je da će tuple
-uvijek sadržavati u sebi objekte s kojima je kreiran, bez obzira što je sada
-spremljeno unutar tih objekata. </p>
+<p>The next data type we will describe is the <em>tuple</em>. A tuple is specific in that it is immutable. It can have an unlimited number of elements. Once the values within a tuple are set, they can no longer be changed. So, if we create a tuple that contains two objects, it is no longer possible to add a new object or delete one of the objects from the tuple. However, this does not mean that the objects within the tuple cannot be changed. What is guaranteed is that the tuple will always contain the objects with which it was created, regardless of what is now stored within those objects.</p>
+
 <pre>
 >>> a = [ 1, 2]
 >>> b = [3 ,4]
@@ -204,17 +198,11 @@ TypeError: 'tuple' object does not support item assignment
 ([7, 2], [3, 4])
 </pre>
 
-<p>U ovom primjeru vidimo stvaranje dvije liste unutar varijabli <code class="prettyprint lang- prettyprinted" style=""><span class="pln">a</span></code> i <code class="prettyprint lang- prettyprinted" style=""><span class="pln">b</span></code>, te
-kreiramo tuple <code class="prettyprint lang- prettyprinted" style=""><span class="pln">c</span></code> koji sadrži te dvije liste. Ako pokušamo promijeniti nulti
-element tupla <code class="prettyprint lang- prettyprinted" style=""><span class="pln">c</span></code>, dobit ćemo grešku. Ali vidimo da možemo bez problema
-promijeniti nulti element liste <code class="prettyprint lang- prettyprinted" style=""><span class="pln">a</span></code>, a budući da je lista <code class="prettyprint lang- prettyprinted" style=""><span class="pln">a</span></code> kao objekt
-sadržana u tupleu <code class="prettyprint lang- prettyprinted" style=""><span class="pln">c</span></code>, promjena je vidljiva i u tupleu.</p>
+<p>In this example, we see the creation of two lists within the variables <code class="prettyprint lang- prettyprinted" style=""><span class="pln">a</span></code> and <code class="prettyprint lang- prettyprinted" style=""><span class="pln">b</span></code>, and we create a tuple <code class="prettyprint lang- prettyprinted" style=""><span class="pln">c</span></code> that contains these two lists. If we try to change the zero-th element of the tuple <code class="prettyprint lang- prettyprinted" style=""><span class="pln">c</span></code>, we will get an error. However, we see that we can change the zero-th element of the list <code class="prettyprint lang- prettyprinted" style=""><span class="pln">a</span></code> without any problem, and since the list <code class="prettyprint lang- prettyprinted" style=""><span class="pln">a</span></code> is an object contained in the tuple <code class="prettyprint lang- prettyprinted" style=""><span class="pln">c</span></code>, the change is also visible in the tuple.</p>
+
 <h4>dictionary</h4>
-<p>Treći tip literala je dictionary. To je tip podatka sličan listi, samo što u
-njemu elementima ne pristupamo po indexu kao kod liste, već po ključu. Svaki
-element dictionaryja ima ključ i vrijednost (key-value store). Ključ
-može biti bilo koji nepromjenjivi objekt u Pythonu. Novi elementi u dictionary
-se dodaju pridjeljivanjem nekog objekta nekom ključu. Primjer: </p>
+
+<p>The third type of literal is a dictionary. It is a data type similar to a list, but instead of accessing elements by index like in a list, we access them by key. Each element in a dictionary has a key and a value (key-value store). The key can be any immutable object in Python. New elements are added to a dictionary by assigning an object to a key. Example:</p>
 
 <pre>
 >>> godine = {}
@@ -236,39 +224,19 @@ se dodaju pridjeljivanjem nekog objekta nekom ključu. Primjer: </p>
 3
 </pre>
 
-<p>Linija 1 kreira prazan dictionary. Vidimo da iako je prazan, pri dodjeljivanju
-već ne postojećem ključu nekog objekta, automatski se kreira taj ključ i
-pridjeljuje mu se taj objekt. Ako ključ već postoji, predani objekt će se
-spremiti na to mjesto u dictionaryju, te će prepisati staru vrijednost (linija
-11; vrijednost <code class="prettyprint lang- prettyprinted" style=""><span class="lit">139</span></code> pod ključem <code class="prettyprint lang- prettyprinted" style=""><span class="pln">metuzalem</span></code> zamjenjena je listom <code class="prettyprint lang- prettyprinted" style=""><span class="pun">[</span><span class="lit">1</span><span class="pun">,</span><span class="lit">3</span><span class="pun">,</span><span class="lit">9</span><span class="pun">]</span></code>. Tako vidimo da je moguće spremati različite tipove podataka kao vrijednosti
-pridružene nekom ključu. Kao i ostali literali, nema ograničenja na broj
-elemenata u dictionaryju. </p>
-<p>Još jedna bitna razlika između dictionaryja i liste je u tome što dictionary ne
-garantira poredak elemenata. Onim redosljedom kojim su dodavani ne moraju biti
-i spremljeni. Dok lista uvijek zadržava redosljed elemenata. Ovo je bitno kod
-prolaska kroz liste i dictionaryje unutar petlji. </p>
+<p>Line 1 creates an empty dictionary. We see that even though it is empty, when assigning an object to a non-existent key, that key is automatically created and assigned that object. If the key already exists, the given object will be stored at that place in the dictionary, overwriting the old value (line 11; the value <code class="prettyprint lang- prettyprinted" style=""><span class="lit">139</span></code> under the key <code class="prettyprint lang- prettyprinted" style=""><span class="pln">metuzalem</span></code> is replaced with the list <code class="prettyprint lang- prettyprinted" style=""><span class="pun">[</span><span class="lit">1</span><span class="pun">,</span><span class="lit">3</span><span class="pun">,</span><span class="lit">9</span><span class="pun">]</span></code>. Thus, we see that different data types can be stored as values associated with a key. Like other literals, there is no limit to the number of elements in a dictionary.</p>
+<p>Another important difference between a dictionary and a list is that a dictionary does not guarantee the order of elements. The order in which they are added may not be the order in which they are stored. In contrast, a list always maintains the order of its elements. This is important when iterating through lists and dictionaries in loops.</p>
 
-<h2>Kontrola toka programa</h2>
+<h2>Control Flow of a Program</h2>
 
-<h4>Dodatna dokumentacija:</h4>
+<h4>Additional Documentation:</h4>
 
-<p><a href="https://docs.python.org/3.6/tutorial/controlflow.html">Službene Python stranice</a>,
-dio tutoriala o kontroli toka programa.</p>
-<h3>Petlje u Pythonu</h3>
-<p>Petlje u Pythonu su <code class="prettyprint lang- prettyprinted" style=""><span class="kwd">for</span></code> i <code class="prettyprint lang- prettyprinted" style=""><span class="kwd">while</span></code> petlja. Python ne koristi <code class="prettyprint lang- prettyprinted" style=""><span class="pun">;</span></code> na
-kraju naredbe, niti vitičaste zagrade za odjeljivanje blokova koda. To se u
-Pythonu rješava indentacijom, tj. uvlačenjem bloka koda. </p>
+<p><a href="https://docs.python.org/3.6/tutorial/controlflow.html">Official Python Pages</a>, part of the tutorial on control flow.</p>
+<h3>Loops in Python</h3>
+<p>The loops in Python are the <code class="prettyprint lang- prettyprinted" style=""><span class="kwd">for</span></code> loop and the <code class="prettyprint lang- prettyprinted" style=""><span class="kwd">while</span></code> loop. Python does not use <code class="prettyprint lang- prettyprinted" style=""><span class="pun">;</span></code> at the end of a statement or curly braces to separate code blocks. This is managed in Python by indentation.</p>
 <h4><code class="prettyprint lang- prettyprinted" style=""><span class="kwd">while</span></code></h4>
-<p>Na slijedećem primjeru
-vidimo kako su naredbe unutar <code class="prettyprint lang- prettyprinted" style=""><span class="kwd">while</span></code> naredbe uvučene 4 razmaka. Python na
-osnovu uvučenosti pojedinih linija koda određuje što spada pod koji blok.
-Vidimo da uvjet u <code class="prettyprint lang- prettyprinted" style=""><span class="kwd">while</span></code> naredbi nije u zagradama, što je kod <code class="prettyprint lang- prettyprinted" style=""><span class="pln">C</span></code> jezika
-bio slučaj. Isto tako primjetimo <code class="prettyprint lang- prettyprinted" style=""><span class="pun">:</span></code> nakon while naredbe. Ona određuje
-početak novog podbloka naredbi. Za završetak bloka ne koristi se <code class="prettyprint lang- prettyprinted" style=""><span class="kwd">end</span></code> ili
-nešto slično, već blok završava prestajanjem identacije. Linije 3 i 4 su unutar
-while petlje, linija 6 je izvan. Ona će se izvršiti tek kad je petlja gotova.</p>
-<p>While petlja u pythonu radi onako kako smo navikli u C-u. Izvršava blok naredbi
-unutar sebe dok god je uvjet na početku petlje istinit.</p>
+<p>In the following example, we see that the statements inside the <code class="prettyprint lang- prettyprinted" style=""><span class="kwd">while</span></code> loop are indented by 4 spaces. Python uses the indentation of individual lines of code to determine which block they belong to. We see that the condition in the <code class="prettyprint lang- prettyprinted" style=""><span class="kwd">while</span></code> loop is not enclosed in parentheses, unlike in the C language. Also, note the <code class="prettyprint lang- prettyprinted" style=""><span class="pun">:</span></code> after the <code class="prettyprint lang- prettyprinted" style=""><span class="kwd">while</span></code> statement. This indicates the beginning of a new sub-block of statements. To end a block, there is no use of <code class="prettyprint lang- prettyprinted" style=""><span class="kwd">end</span></code> or anything similar; instead, the block ends when the indentation ends. Lines 3 and 4 are inside the <code class="prettyprint lang- prettyprinted" style=""><span class="kwd">while</span></code> loop, while line 6 is outside. It will be executed only when the loop is finished.</p>
+<p>The <code class="prettyprint lang- prettyprinted" style=""><span class="kwd">while</span></code> loop in Python works in the way we are used to in C. It executes the block of statements within it as long as the condition at the beginning of the loop is true.</p>
 
 <pre>
 n = 10
@@ -276,7 +244,7 @@ while n > 1:
     print (n)
     n -= 1
  
-print ("gotovo")
+print ("finished")
 </pre>
 
 Ispis:
@@ -289,18 +257,12 @@ Ispis:
 4
 3
 2
-gotovo
+finished
 </pre>
 
 
 <h4><code class="prettyprint lang- prettyprinted" style=""><span class="kwd">for</span></code></h4>
-<p>Naredba <code class="prettyprint lang- prettyprinted" style=""><span class="kwd">for</span></code> u Pythonu radi drugačije od onoga na što smo navikli u C-u.
-Do sada smo morali imati definiran brojač, te smo određivali korak iteracije i
-uvjet pri kojem će se prekidati izvršavanje. Zapravo je <code class="prettyprint lang- prettyprinted" style=""><span class="kwd">for</span></code> u C-u po
-funkcionalnosti vrlo sličan <code class="prettyprint lang- prettyprinted" style=""><span class="kwd">while</span></code> petlji. U Pythonu <code class="prettyprint lang- prettyprinted" style=""><span class="kwd">for</span></code> se koristi
-drugačije. Ovdje <code class="prettyprint lang- prettyprinted" style=""><span class="kwd">for</span></code> služi za prolazak kroz neku sekvencu. Određeni tipovi
-podataka (kao što su stringovi i liste) su zapravo sekvence podataka, te <code class="prettyprint lang- prettyprinted" style=""><span class="kwd">for</span></code> prolazi kroz sekvence redosljedom kojim se elementi pojavljuju u tim
-sekvencama. </p>
+<p>The <code class="prettyprint lang- prettyprinted" style=""><span class="kwd">for</span></code> statement in Python works differently from what we are used to in C. So far, we have needed to define a counter, determine the iteration step, and specify the condition under which execution will stop. In fact, the <code class="prettyprint lang- prettyprinted" style=""><span class="kwd">for</span></code> loop in C is functionally quite similar to the <code class="prettyprint lang- prettyprinted" style=""><span class="kwd">while</span></code> loop. In Python, however, the <code class="prettyprint lang- prettyprinted" style=""><span class="kwd">for</span></code> loop is used differently. Here, the <code class="prettyprint lang- prettyprinted" style=""><span class="kwd">for</span></code> loop is used to iterate over a sequence. Certain data types (such as strings and lists) are essentially sequences of data, and the <code class="prettyprint lang- prettyprinted" style=""><span class="kwd">for</span></code> loop iterates through the elements of these sequences in the order in which they appear.</p>
 
 <pre>
 sek = ["pero", "djuro", "marko", "miki"]
@@ -309,7 +271,7 @@ for i in sek:
     print (i, len(i))
 </pre>
 
-Ispis:
+Print:
 <pre>
 pero
 4
@@ -321,12 +283,9 @@ miki
 4
 </pre>
 
-<p>Ovaj primjer prikazuje kako se radi iteracija korištenjem <code class="prettyprint lang- prettyprinted" style=""><span class="kwd">for</span></code> naredbe. Petlja
-uzima jedan po jedan element iz liste, pridjeljuje ga varijabli <code class="prettyprint lang- prettyprinted" style=""><span class="pln">i</span></code>, te tu
-varijablu imamo dostupnu unutar <code class="prettyprint lang- prettyprinted" style=""><span class="kwd">for</span></code> bloka za daljnje operacije. </p>
-<p><code class="prettyprint lang- prettyprinted" style=""><span class="kwd">for</span></code> blokovi mogu biti i <em>nested</em> (jedan unutar drugog). U slijedećem primjeru
-prvi for uzima jedan po jedan element liste <code class="prettyprint lang- prettyprinted" style=""><span class="pln">sek</span></code>, dok unutarnji for uzima
-jedan po jedan element stringa <code class="prettyprint lang- prettyprinted" style=""><span class="pln">i</span></code>, te ga pridjeljuje varijabli slovo. </p>
+<p>This example shows how iteration is done using the <code class="prettyprint lang- prettyprinted" style=""><span class="kwd">for</span></code> statement. The loop takes each element from the list one by one, assigns it to the variable <code class="prettyprint lang- prettyprinted" style=""><span class="pln">i</span></code>, and this variable is then available within the <code class="prettyprint lang- prettyprinted" style=""><span class="kwd">for</span></code> block for further operations.</p>
+<p><code class="prettyprint lang- prettyprinted" style=""><span class="kwd">for</span></code> blocks can also be nested (one inside the other). In the following example, the outer <code class="prettyprint lang- prettyprinted" style=""><span class="kwd">for</span></code> loop takes each element from the list <code class="prettyprint lang- prettyprinted" style=""><span class="pln">sek</span></code>, while the inner <code class="prettyprint lang- prettyprinted" style=""><span class="kwd">for</span></code> loop takes each character of the string <code class="prettyprint lang- prettyprinted" style=""><span class="pln">i</span></code> and assigns it to the variable <code class="prettyprint lang- prettyprinted" style=""><span class="pln">slovo</span></code>.</p>
+
 <pre>
 sek = ["pero", "djuro", "marko", "miki"]
      
@@ -335,7 +294,7 @@ for i in sek:
     print (slovo)
 </pre>
 
-Ispis: 
+Print: 
 <pre>
 p
 e
@@ -358,7 +317,8 @@ i
 </pre>
 
 <h4><code class="prettyprint lang- prettyprinted" style=""><span class="pln">range</span></code></h4>
-<p>Range je python funkcija koja vraća listu koja sadrži raspon brojeva.</p>
+<p><code class="prettyprint lang- prettyprinted" style=""><span class="pln">range</span></code> is a Python function that returns a sequence representing a range of numbers.</p>
+
 <pre>&gt;&gt;&gt; list(range(10))
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 &gt;&gt;&gt; list(range(2, 8))
@@ -369,29 +329,23 @@ i
 [2, 5, 8]
 </pre>
 
-<p>Samo jedan parametar predan funkciji označava do koje će vrijednosti funkcija
-vratiti raspon brojeva. Broj koji je predan kao završna vrijednost raspona
-nikada nije uključen u raspon. Broj od kojeg počinje generiranje raspona
-uključen je u vraćeni raspon, te po default počinje s 0.</p>
-<p>Ukoliko poziv funkcije ima dva parametra, tada je prvi parametar početna
-vrijednost raspona (uključen u raspon), a drugi parametar je krajnja vrijednost
-(nije uključen u raspon). </p>
-<p>Ukoliko poziv funkcije ima tri parametra, tada su prva dva isto kao u prošlom
-slučaju, a treći parametar je korak raspona. </p>
-<p>Koristeći <code class="prettyprint lang- prettyprinted" style=""><span class="pln">range</span></code> funkciju možemo <code class="prettyprint lang- prettyprinted" style=""><span class="kwd">for</span></code> petlju koristiti slično kako bi ju
-koristili u C-u. </p>
+<p>When only one parameter is passed to the <code class="prettyprint lang- prettyprinted" style=""><span class="pln">range</span></code> function, it indicates up to which value the function will return a range of numbers. The number given as the end value of the range is never included in the range. The number from which the range starts is included in the returned range, and by default, it starts at 0.</p>
+<p>If the function call has two parameters, then the first parameter is the starting value of the range (included in the range), and the second parameter is the end value (not included in the range).</p>
+<p>If the function call has three parameters, the first two are as in the previous case, and the third parameter is the step of the range.</p>
+<p>Using the <code class="prettyprint lang- prettyprinted" style=""><span class="pln">range</span></code> function, we can use a <code class="prettyprint lang- prettyprinted" style=""><span class="kwd">for</span></code> loop in a manner similar to how it would be used in C.</p>
+
 <pre>
 for(i = 0; i < 10; i++) {
   printf("%d\n", i);
 }
 </pre>
-<p> Ekvivalentan zapis u pythonu: </p>
+<p> Equivalent notation in Python: </p>
 <pre>
 for i in range(10):
     print (i)
 </pre>
 
-<p> Tako bi prolazak kroz listu mogli odraditi i korištenjem range funkcije. U ovom slučaju dobivamo u varijabli i trenutni index, te preko lista[i] pristupamo i-tom elementu liste. </p>
+<p>We could also iterate through a list using the <code class="prettyprint lang- prettyprinted" style=""><span class="pln">range</span></code> function. In this case, the variable <code class="prettyprint lang- prettyprinted" style=""><span class="pln">i</span></code> will contain the current index, and we can access the <code class="prettyprint lang- prettyprinted" style=""><span class="pln">i</span></code>-th element of the list using <code class="prettyprint lang- prettyprinted" style=""><span class="pln">list[i]</span></code>.</p>
 
 <pre>
 lista = [ "a", "aa", "aaa", "aaaa", "aaaaa" ]
@@ -399,81 +353,68 @@ for i in range(len(lista)):
     print (lista[i])
 </pre>
 
-<p>Ipak, za ovakve slučajeve jednostavnije je koristiti funkciju <code class="prettyprint lang- prettyprinted" style=""><span class="pln">enumerate</span></code>, koja
-vraća tuple koji sadrži trenutni index, te element na tom indexu.</p>
+<p>However, in such cases, it is simpler to use the <code class="prettyprint lang- prettyprinted" style=""><span class="pln">enumerate</span></code> function, which returns a tuple containing the current index and the element at that index.</p>
 
 <pre>
 lista = [ "a", "aa", "aaa", "aaaa", "aaaaa" ]
 for (i,x) in enumerate(lista):
     print (i) # i je index
-    print (x) # x je vrijednost elementa
+    print (x) # x je element value
 </pre>
 
-<h3>Uvjeti</h3>
-<p>Python podržava <code class="prettyprint lang- prettyprinted" style=""><span class="kwd">if</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> </span><span class="kwd">else</span></code> uvjete. Sintaksa je kao u slijedećem
-primjeru. </p>
+<h3>Conditions</h3>
+<p>Python supports <code class="prettyprint lang- prettyprinted" style=""><span class="kwd">if</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> </span><span class="kwd">else</span></code> conditions. The syntax is as shown in the following example.</p>
 
 <pre>
 n= 10
 if n > 7:
-    print "veci od 7"
+    print "bigger than 7"
 elif n > 5:
-    print "izmedju 7 i 5"
+    print "between 7 i 5"
 else: 
-    print "5 ili manji"
+    print "5 or less"
 </pre>
 
 
-<p>Moguće je uspoređivanje i kompleksnijih objekata, ne samo brojeva i slova.
-Primjer: </p>
+<p>It is possible to compare more complex objects, not just numbers and letters. Example:</p>
 <pre>&gt;&gt;&gt; ime = "Pero"
 &gt;&gt;&gt; ime2 = "Djuro"
 &gt;&gt;&gt; if ime != ime2:
-...     print ("imena su razlicita")
+...     print ("names are different")
 ... else:
-...     print ("imena su ista")
+...     print ("names are the same")
 ... 
-imena su razlicita
+names are different
 </pre>
 
-<h3>Funkcije</h3>
-<p>U slijedećem primjeru je funkcija koja ispisuje fibonnacijev niz do nekog broja
-zadanog u parametru. </p>
+<h3>Functions</h3>
+<p>In the following example, there is a function that prints the Fibonacci sequence up to a number given as a parameter.</p>
 <pre>
 def fib(n):    
-    """Ispisuje fibonnacijev niz od 0 do n"""
+    """Prints the Fibonacci sequence from 0 to n"""
     a, b = 0, 1
     while a < n:
-        print (a)
+        print(a)
         a, b = b, a+b
 </pre>
 
-U slijedećem primjeru je način pozivanja ove funkcije i rezultat koji bi
-ispisala.
+In the following example, we see how to call this function and the result it would print.
 <pre>&gt;&gt;&gt; fib(2000)
 0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597
 </pre>
 
-<p>U primjeru ove funkcije vidimo nekoliko stvari:</p>
+<p>In the example of this function, we see a few things:</p>
 <ul>
-<li>ključna riječ kojom se definira funkcija je <code class="prettyprint lang- prettyprinted" style=""><span class="kwd">def</span></code></li>
-<li><code class="prettyprint lang- prettyprinted" style=""><span class="str">""" tekst unutar trostrukih navodnika """</span></code> naziva se <em>documentation
-string</em>, postavlja se odmah na početku funkcije, te služi kako bi se opisali
-ulazi i izlazi iz funkcije, te dao komentar funkcije.</li>
-<li>linija 3 prikazuje pythonov način <em>multiple assignmenta</em>, tj. istovremenog
-pridjeljivanja vrijednosti više varijabli.</li>
-<li>vidimo da funkcija ne vraća nikakvu vrijednost, već sama funkcija odrađuje
-ispisivanje. Zapravo to nije točno, svaka funkcija u pythonu vraća vrijednost.
-Ako nema eksplicitno navedene <code class="prettyprint lang- prettyprinted" style=""><span class="kwd">return</span></code> naredbe, tada je povratna vrijednost
-funckije <code class="prettyprint lang- prettyprinted" style=""><span class="kwd">None</span></code>. </li>
+<li>The keyword used to define a function is <code class="prettyprint lang- prettyprinted" style=""><span class="kwd">def</span></code></li>
+<li><code class="prettyprint lang- prettyprinted" style=""><span class="str">""" text within triple quotes """</span></code> is called a <em>documentation string</em>. It is placed at the very beginning of the function and serves to describe the inputs and outputs of the function, as well as provide a comment on the function's purpose.</li>
+<li>Line 3 shows Python's way of <em>multiple assignment</em>, i.e., assigning values to multiple variables simultaneously.</li>
+<li>We see that the function does not return any value but performs the printing itself. Actually, this is not entirely true—every function in Python returns a value. If there is no explicit <code class="prettyprint lang- prettyprinted" style=""><span class="kwd">return</span></code> statement, then the return value of the function is <code class="prettyprint lang- prettyprinted" style=""><span class="kwd">None</span></code>.</li>
 </ul>
-<p>Ukoliko bi željeli funkciju koja će nam vratiti vrijednosti fibonnacijevog niza
-umjesto da ih sama ispiše, takva funkcija će izgledati kao na slijedećem
-primjeru:</p>
+<p>If we wanted a function that would return the values of the Fibonacci sequence instead of printing them, such a function would look like the following example:</p>
 
 <pre>
 def fib2(n): 
-    """Vraća listu koja sadrži fibonnacijev niz od 0 do n"""
+    """Returns a list containing the Fibonacci sequence from 0 to n"""
     result = []
     a, b = 0, 1
     while a < n:
@@ -482,28 +423,21 @@ def fib2(n):
     return result
 </pre>
 
-U slijedećem primjeru je način pozivanja ove funkcije i rezultat koji bi
-ispisala.
-<pre>&gt;&gt;&gt; f = fib2(2000)  #poziva funkciju i sprema vrijednost u varijablu f
-&gt;&gt;&gt; print (f)        #ispisuje varijablu f, tj. povratnu vrijednost iz funkcije
+In the following example, we see how to call this function and the result it would print.
+<pre>&gt;&gt;&gt; f = fib2(2000)  # calls the function and stores the value in variable f
+&gt;&gt;&gt; print(f)        # prints the variable f, i.e., the return value from the function
 [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597]
 </pre>
 
-<p>Ova funkcija vraća listu <code class="prettyprint lang- prettyprinted" style=""><span class="pln">result</span></code> u koju se u <code class="prettyprint lang- prettyprinted" style=""><span class="kwd">while</span></code> petlji dodaju jedan
-po jedan vrijednosti fibonnacijevog niza u toj trenutnoj iteraciji. 
-Naredbom <code class="prettyprint lang- prettyprinted" style=""><span class="pln">f </span><span class="pun">=</span><span class="pln"> fib</span><span class="pun">(</span><span class="lit">2000</span><span class="pun">)</span></code> poziva se funkcija te se povratna vrijednost sprema
-u varijablu <code class="prettyprint lang- prettyprinted" style=""><span class="pln">f</span></code>.</p>
-<h2>Unos s tipkovnice</h2>
-<h4>Dodatna dokumentacija</h4>
-<p><a href="https://docs.python.org/3.6/tutorial/inputoutput.html">Tutorial za input/output</a>
-na službenim stranicama.</p>
+<p>This function returns the list <code class="prettyprint lang- prettyprinted" style=""><span class="pln">result</span></code>, to which the values of the Fibonacci sequence are added one by one in each iteration of the <code class="prettyprint lang- prettyprinted" style=""><span class="kwd">while</span></code> loop. The statement <code class="prettyprint lang- prettyprinted" style=""><span class="pln">f </span><span class="pun">=</span><span class="pln"> fib</span><span class="pun">(</span><span class="lit">2000</span><span class="pun">)</span></code> calls the function and stores the return value in the variable <code class="prettyprint lang- prettyprinted" style=""><span class="pln">f</span></code>.</p>
+
+<h2>Keyboard Input</h2>
+<h4>Additional Documentation</h4>
+<p><a href="https://docs.python.org/3.6/tutorial/inputoutput.html">Tutorial for input/output</a> on the official site.</p>
+
 <h4>input</h4>
-<p>Unos s tipkovnice u pythonu se vrši s funkcijom <code class="prettyprint lang- prettyprinted" style=""><span class="pln">input</span><span class="pun">()</span></code>.
-Ova funkcija učitava tekst s
-tipkovnice. Povratna vrijednost joj je učitani tekst, te ga vraća kao string.
-Dakle, ako učitani tekst želimo negdje spremiti, potrebno je njenu povratnu
-vrijednost dodijeliti nekoj varijabli. Može primiti parametar tipa string, te
-će taj string ispisati prije nego zatraži upis. Primjer: </p>
+<p>Keyboard input in Python is done using the <code class="prettyprint lang- prettyprinted" style=""><span class="pln">input</span><span class="pun">()</span></code> function. This function reads text from the keyboard, and its return value is the entered text, returned as a string. Thus, if we want to store the entered text, we need to assign its return value to a variable. It can accept a string parameter, which will be displayed before requesting input. Example:</p>
+
 <pre>
     >>> n = input()
     upisujemo neki tekst
@@ -523,19 +457,15 @@ vrijednost dodijeliti nekoj varijabli. Može primiti parametar tipa string, te
     7
 </pre>
 
-<p>Iz gornjeg primjera možemo vidjeti da je upisani tekst uvijek string. Ako ga
-želimo kao broj, moramo ga eksplicitno pretvoriti u broj. To možemo koristeći
-naredbu <code class="prettyprint lang- prettyprinted" style=""><span class="kwd">int</span><span class="pun">(</span><span class="pln"> </span><span class="pun">)</span></code> (kao u liniji 13).</p>
+<p>From the above example, we can see that the entered text is always a string. If we want it as a number, we need to explicitly convert it to a number. We can do this using the <code class="prettyprint lang- prettyprinted" style=""><span class="kwd">int</span><span class="pun">(</span><span class="pln"> </span><span class="pun">)</span></code> command (as in line 13).</p>
 
-<h2>Uključivanje dodatnih modula</h2>
-<p>U Python je vrlo jednostavno uključiti neke dodatne module koji daju dodatne
-funkcionalnosti. Za to služi naredba <code class="prettyprint lang- prettyprinted" style=""><span class="kwd">import</span></code>.</p>
+<h2>Including Additional Modules</h2>
+<p>In Python, it is very easy to include additional modules that provide extra functionalities. The command used for this is <code class="prettyprint lang- prettyprinted" style=""><span class="kwd">import</span></code>.</p>
 <pre>
 import math
 import random
 </pre>
-<p>Modul <code class="prettyprint lang- prettyprinted" style=""><span class="pln">math</span></code> daje pristup funkcijama iz C biblioteke za rad sa <em>floating
-point</em> matematikom. </p>
+<p>The <code class="prettyprint lang- prettyprinted" style=""><span class="pln">math</span></code> module provides access to functions from the C library for working with floating-point mathematics.</p>
 <pre>&gt;&gt;&gt; import math
 &gt;&gt;&gt; math.cos(math.pi / 4.0)
 0.70710678118654757
@@ -543,7 +473,7 @@ point</em> matematikom. </p>
 10.0
 </pre>
 
-<p>Modul <code class="prettyprint lang- prettyprinted" style=""><span class="pln">random</span></code> daje mogućnost rada sa slučajnim brojevima.</p>
+<p>The <code class="prettyprint lang- prettyprinted" style=""><span class="pln">random</span></code> module allows working with random numbers.</p>
 <pre>&gt;&gt;&gt; import random
 &gt;&gt;&gt; random.choice(['apple', 'pear', 'banana'])
 'apple'
@@ -554,38 +484,40 @@ point</em> matematikom. </p>
 </pre>
 
 <h2>Numpy &amp; OpenCV</h2>
-<h4>Dodatna dokumentacija</h4>
+<h4>Additional documentation</h4>
 <p><a href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html">Numpy array</a></p>
 <p><a href="http://docs.scipy.org/doc/numpy/reference/arrays.indexing.html">Indexing and slicing numpy arrays</a></p>
 <p><a href="http://docs.opencv.org/modules/highgui/doc/reading_and_writing_images_and_video.html#imread">Reading image in openCV</a></p>
 <p><a href="http://docs.scipy.org/doc/numpy/user/index.html#user">Numpy user guide</a></p>
-<h4>Primjeri</h4>
-<p>Importiranje modula:</p>
+
+<h4>Examples</h4>
+
+<p>Importing modules:</p>
 <pre class="prettyprint prettyprinted" style=""><span class="kwd">import</span><span class="pln"> numpy </span><span class="kwd">as</span><span class="pln"> np
 </span><span class="kwd">import</span><span class="pln"> cv2</span></pre>
 
-<p>Učitavanje slike:</p>
-<pre class="prettyprint prettyprinted" style=""><span class="pln">slika </span><span class="pun">=</span><span class="pln"> cv2</span><span class="pun">.</span><span class="pln">imread</span><span class="pun">(</span><span class="str">'/home/student/osirv_20_21/lab1/slike/baboon.bmp'</span><span class="pun">)</span></pre>
+<p>Loading an image:</p>
+<pre class="prettyprint prettyprinted" style=""><span class="pln">image </span><span class="pun">=</span><span class="pln"> cv2</span><span class="pun">.</span><span class="pln">imread</span><span class="pun">(</span><span class="str">'/home/student/osirv_20_21/lab1/slike/baboon.bmp'</span><span class="pun">)</span></pre>
 
-<p>Provjera učitavanja:</p>
-<pre class="prettyprint prettyprinted" style=""><span class="kwd">print</span><span class="pln"> (slika) </span></pre>
+<p>Checking if the image loaded:</p>
+<pre class="prettyprint prettyprinted" style=""><span class="kwd">print</span><span class="pln">(image) </span></pre>
 
-<p><a href="http://docs.opencv.org/modules/highgui/doc/reading_and_writing_images_and_video.html#imread">Reading image in openCV</a> - ovdje možete naći dokumentaciju za openCV <code class="prettyprint lang- prettyprinted" style=""><span class="pln">imread</span></code> funkciju.</p>
+<p><a href="http://docs.opencv.org/modules/highgui/doc/reading_and_writing_images_and_video.html#imread">Reading image in OpenCV</a> - here you can find the documentation for the OpenCV <code class="prettyprint lang- prettyprinted" style=""><span class="pln">imread</span></code> function.</p>
 <ul>
-<li>BITNO: OpenCV ne koristi RGB nego BGR notaciju pri spremanju slike. To znači
-da je prvi po redu kanal plavi, zatim zeleni, te tek za tim crveni.</li>
+<li>IMPORTANT: OpenCV does not use RGB but rather BGR notation when storing images. This means that the first channel is blue, followed by green, and then red.</li>
 </ul>
-<h4>Svojstva numpy arraya:</h4>
-<pre class="prettyprint prettyprinted" style=""><span class="pun">&gt;&gt;&gt;</span><span class="pln"> slika</span><span class="pun">.</span><span class="pln">shape
+
+<h4>Properties of a NumPy Array:</h4>
+<pre class="prettyprint prettyprinted" style=""><span class="pun">&gt;&gt;&gt;</span><span class="pln"> image</span><span class="pun">.</span><span class="pln">shape
 </span><span class="pun">(</span><span class="lit">480</span><span class="pun">,</span><span class="pln"> </span><span class="lit">500</span><span class="pun">,</span><span class="pln"> </span><span class="lit">3</span><span class="pun">)</span><span class="pln">
-</span><span class="pun">&gt;&gt;&gt;</span><span class="pln"> slika</span><span class="pun">.</span><span class="pln">shape</span><span class="pun">[</span><span class="lit">0</span><span class="pun">]</span><span class="pln"> </span><span class="com"># broj redova u slici</span><span class="pln">
+</span><span class="pun">&gt;&gt;&gt;</span><span class="pln"> image</span><span class="pun">.</span><span class="pln">shape</span><span class="pun">[</span><span class="lit">0</span><span class="pun">]</span><span class="pln"> </span><span class="com"># number of rows in the image</span><span class="pln">
 </span><span class="lit">480</span><span class="pln">
-</span><span class="pun">&gt;&gt;&gt;</span><span class="pln"> slika</span><span class="pun">.</span><span class="pln">shape</span><span class="pun">[</span><span class="lit">1</span><span class="pun">]</span><span class="pln"> </span><span class="com"># broj stupaca u slici</span><span class="pln">
+</span><span class="pun">&gt;&gt;&gt;</span><span class="pln"> image</span><span class="pun">.</span><span class="pln">shape</span><span class="pun">[</span><span class="lit">1</span><span class="pun">]</span><span class="pln"> </span><span class="com"># number of columns in the image</span><span class="pln">
 </span><span class="lit">500</span><span class="pln">
-</span><span class="pun">&gt;&gt;&gt;</span><span class="pln"> slika</span><span class="pun">.</span><span class="pln">shape</span><span class="pun">[</span><span class="lit">2</span><span class="pun">]</span><span class="pln"> </span><span class="com"># broj kanala u slici</span><span class="pln">
+</span><span class="pun">&gt;&gt;&gt;</span><span class="pln"> image</span><span class="pun">.</span><span class="pln">shape</span><span class="pun">[</span><span class="lit">2</span><span class="pun">]</span><span class="pln"> </span><span class="com"># number of channels in the image</span><span class="pln">
 </span><span class="lit">3</span></pre>
 
-<h5>Učitavanje slike u boji i grayscale:</h5>
+<h5>Loading a color and grayscale image:</h5>
 <pre class="prettyprint prettyprinted" style=""><span class="pun">&gt;&gt;&gt;</span><span class="pln"> </span><span class="kwd">import</span><span class="pln"> numpy </span><span class="kwd">as</span><span class="pln"> np
 </span><span class="pun">&gt;&gt;&gt;</span><span class="pln"> </span><span class="kwd">import</span><span class="pln"> cv2
 </span><span class="pun">&gt;&gt;&gt;</span><span class="pln"> slika </span><span class="pun">=</span><span class="pln"> cv2</span><span class="pun">.</span><span class="pln">imread</span><span class="pun">(</span><span class="str">'/home/student/osirv_20_21/lab1/slike/baboon.bmp'</span><span class="pun">,</span><span class="pln"> cv2</span><span class="pun">.</span><span class="pln">IMREAD_COLOR</span><span class="pun">)</span><span class="pln">
@@ -657,9 +589,7 @@ radi performansi. </p>
 </span><span class="pun">&gt;&gt;&gt;</span><span class="pln"> slika</span><span class="pun">[-</span><span class="lit">101</span><span class="pun">,</span><span class="lit">0</span><span class="pun">,</span><span class="lit">0</span><span class="pun">]</span><span class="pln">
 </span><span class="lit">42</span></module></stdin></pre>
 
-<p>U uglatim zagradama se treba odvojiti zarezima onoliko indeksa koliko ima
-dimenzija. Za grayscale sliku bi bilo samo dvije dimenzije (x i y), pa bi bilo
-samo 2 indeksa odvojena zarezima ( npr. <code class="prettyprint lang- prettyprinted" style=""><span class="pln">slika</span><span class="pun">[</span><span class="pln"> </span><span class="lit">25</span><span class="pun">,</span><span class="pln"> </span><span class="lit">25</span><span class="pln"> </span><span class="pun">]</span></code> ).</p>
+<p>In square brackets, you need to separate with commas as many indices as there are dimensions. For a grayscale image, there would only be two dimensions (x and y), so there would only be 2 indices separated by commas (e.g.</p> <code class="prettyprint lang- prettyprinted" style=""><span class="pln">slika</span><span class="pun">[</span><span class="pln"> </span><span class="lit">25</span><span class="pun">,</span><span class="pln"> </span><span class="lit">25</span><span class="pln"> </span><span class="pun">]</span></code> ).</p>
 <h5>Slicing:</h5>
 <pre class="prettyprint prettyprinted" style=""><span class="pun">&gt;&gt;&gt;</span><span class="pln"> slika</span><span class="pun">[</span><span class="lit">0</span><span class="pun">,</span><span class="lit">0</span><span class="pun">,:]</span><span class="pln">
 array</span><span class="pun">([</span><span class="lit">6</span><span class="pun">,</span><span class="pln"> </span><span class="lit">6</span><span class="pun">,</span><span class="pln"> </span><span class="lit">6</span><span class="pun">],</span><span class="pln"> dtype</span><span class="pun">=</span><span class="pln">uint8</span><span class="pun">)</span><span class="pln">
@@ -707,21 +637,16 @@ array</span><span class="pun">([[</span><span class="pln">  </span><span class="
        </span><span class="pun">[</span><span class="pln"> </span><span class="lit">51</span><span class="pun">,</span><span class="pln">  </span><span class="lit">72</span><span class="pun">,</span><span class="pln">  </span><span class="lit">79</span><span class="pun">,</span><span class="pln"> </span><span class="pun">...,</span><span class="pln">  </span><span class="lit">54</span><span class="pun">,</span><span class="pln">  </span><span class="lit">44</span><span class="pun">,</span><span class="pln">  </span><span class="lit">54</span><span class="pun">],</span><span class="pln">
        </span><span class="pun">[</span><span class="pln">  </span><span class="lit">6</span><span class="pun">,</span><span class="pln">   </span><span class="lit">6</span><span class="pun">,</span><span class="pln">   </span><span class="lit">6</span><span class="pun">,</span><span class="pln"> </span><span class="pun">...,</span><span class="pln">   </span><span class="lit">6</span><span class="pun">,</span><span class="pln">   </span><span class="lit">6</span><span class="pun">,</span><span class="pln">   </span><span class="lit">6</span><span class="pun">]],</span><span class="pln"> dtype</span><span class="pun">=</span><span class="pln">uint8</span><span class="pun">)</span></pre>
 
-<p>Python podržava array slicing. To je tehnika koja nam omogučuje vraćanje samo
-određenih dijelova nekog polja. Znak <code class="prettyprint lang- prettyprinted" style=""><span class="pun">:</span></code> označava ' sve iz te dimenzije '.</p>
+<p>Python supports array slicing, which is a technique that allows us to return only specific parts of an array. The <code class="prettyprint lang- prettyprinted" style=""><span class="pun">:</span></code> symbol means "all from this dimension".</p>
 <ul>
-<li>Prvi primjer vraća prvi red i prvi stupac, ali sve vrijednosti treće dimenzija,
-koja određuje kanale slike ( BGR ). Tako su vraćene vrijednosti u ovom slučaju
-BGR vrijednosti piksela (0,0)</li>
-<li>Drugi primjer vraća isto ali za piksel (1,1)</li>
-<li>Treći primjer vraća isto ali za piksel (128,128)</li>
-<li>Četvrti primjer vraća prvi red, sve vrijednosti piksela stupaca u prvom redu,
-te za svaku od njih samo vrijednost plavog kanala.</li>
-<li>Peti primjer vraća sve piksele slike, ali samo nulti kanal, tj. plavi</li>
-<li>Šesti primjer vrijednosti crvenog kanala za sve piksele slike.</li>
+<li>The first example returns the first row and first column, but all values from the third dimension, which defines the image channels (BGR). Thus, the returned values in this case are the BGR values of the pixel at (0,0).</li>
+<li>The second example returns the same, but for the pixel at (1,1).</li>
+<li>The third example returns the same, but for the pixel at (128,128).</li>
+<li>The fourth example returns the first row, all pixel values from the columns in the first row, and for each of them, only the value of the blue channel.</li>
+<li>The fifth example returns all pixels of the image, but only the first channel, i.e., blue.</li>
+<li>The sixth example returns the values of the red channel for all pixels of the image.</li>
 </ul>
-<p>Python također može vratiti određene raspone. Rasponi se određuju brojevima
-ispred i iza znaka <code class="prettyprint lang- prettyprinted" style=""><span class="pun">:</span></code>.</p>
+<p>Python can also return specific ranges. Ranges are defined by numbers before and after the colon symbol  <code class="prettyprint lang- prettyprinted" style=""><span class="pun">:</span></code>.</p>
 <pre class="prettyprint prettyprinted" style=""><span class="pun">&gt;&gt;&gt;</span><span class="pln"> slika</span><span class="pun">[</span><span class="lit">0</span><span class="pun">:</span><span class="lit">100</span><span class="pun">,</span><span class="lit">0</span><span class="pun">:</span><span class="lit">100</span><span class="pun">,</span><span class="lit">0</span><span class="pun">]</span><span class="pln"> </span><span class="com"># 100x100 piksela plavog kanala</span><span class="pln">
 array</span><span class="pun">([[</span><span class="pln">  </span><span class="lit">6</span><span class="pun">,</span><span class="pln">   </span><span class="lit">6</span><span class="pun">,</span><span class="pln">   </span><span class="lit">6</span><span class="pun">,</span><span class="pln"> </span><span class="pun">...,</span><span class="pln">   </span><span class="lit">6</span><span class="pun">,</span><span class="pln">   </span><span class="lit">6</span><span class="pun">,</span><span class="pln">   </span><span class="lit">6</span><span class="pun">],</span><span class="pln">
        </span><span class="pun">[</span><span class="pln"> </span><span class="lit">25</span><span class="pun">,</span><span class="pln">  </span><span class="lit">34</span><span class="pun">,</span><span class="pln">  </span><span class="lit">22</span><span class="pun">,</span><span class="pln"> </span><span class="pun">...,</span><span class="pln">  </span><span class="lit">11</span><span class="pun">,</span><span class="pln">  </span><span class="lit">14</span><span class="pun">,</span><span class="pln">  </span><span class="lit">22</span><span class="pun">],</span><span class="pln">
@@ -743,8 +668,7 @@ array</span><span class="pun">([[</span><span class="pln"> </span><span class="l
        </span><span class="pun">[</span><span class="lit">23</span><span class="pun">,</span><span class="pln"> </span><span class="lit">25</span><span class="pun">,</span><span class="pln"> </span><span class="lit">25</span><span class="pun">,</span><span class="pln"> </span><span class="lit">34</span><span class="pun">,</span><span class="pln"> </span><span class="lit">11</span><span class="pun">,</span><span class="pln"> </span><span class="lit">12</span><span class="pun">,</span><span class="pln"> </span><span class="lit">11</span><span class="pun">],</span><span class="pln">
        </span><span class="pun">[</span><span class="lit">25</span><span class="pun">,</span><span class="pln"> </span><span class="lit">12</span><span class="pun">,</span><span class="pln"> </span><span class="lit">11</span><span class="pun">,</span><span class="pln"> </span><span class="lit">25</span><span class="pun">,</span><span class="pln"> </span><span class="lit">23</span><span class="pun">,</span><span class="pln"> </span><span class="lit">22</span><span class="pun">,</span><span class="pln"> </span><span class="lit">11</span><span class="pun">]],</span><span class="pln"> dtype</span><span class="pun">=</span><span class="pln">uint8</span><span class="pun">)</span></pre>
 
-<p>Python također može pri vraćanju raspona koristiti i korak. Tako možemo vratiti
-samo svaki drugi ili svaki treći piksel.</p>
+<p>Python can also use a step when returning ranges. This allows us to return only every second or third pixel, for example.</p>
 <pre class="prettyprint prettyprinted" style=""><span class="pun">&gt;&gt;&gt;</span><span class="pln"> slika</span><span class="pun">[:,:,</span><span class="lit">0</span><span class="pun">].</span><span class="pln">shape
 </span><span class="pun">(</span><span class="lit">480</span><span class="pun">,</span><span class="pln"> </span><span class="lit">500</span><span class="pun">)</span><span class="pln">
 </span><span class="pun">&gt;&gt;&gt;</span><span class="pln"> slika</span><span class="pun">.</span><span class="pln">shape
@@ -760,10 +684,8 @@ samo svaki drugi ili svaki treći piksel.</p>
 </span><span class="pun">&gt;&gt;&gt;</span><span class="pln"> slika</span><span class="pun">[::</span><span class="lit">3</span><span class="pun">,::</span><span class="lit">3</span><span class="pun">,</span><span class="lit">0</span><span class="pun">].</span><span class="pln">shape
 </span><span class="pun">(</span><span class="lit">160</span><span class="pun">,</span><span class="pln"> </span><span class="lit">167</span><span class="pun">)</span></pre>
 
-<h4>Matematičke operacije nad poljima</h4>
-<p>Moguće je izvršavati matematičke operacije nad svim elementima polja. Isto tako
-moguće je odabrati određeni dio polja korištenjem slicinga, te samo na njemu
-izvršiti određene operacije.</p>
+<h4>Mathematical Operations on Arrays</h4>
+<p>It is possible to perform mathematical operations on all elements of an array. Similarly, you can select a specific part of the array using slicing and perform operations only on that part.</p>
 <pre class="prettyprint prettyprinted" style=""><span class="pun">&gt;&gt;&gt;</span><span class="pln"> slika</span><span class="pun">[:</span><span class="lit">10</span><span class="pun">,:</span><span class="lit">10</span><span class="pun">,</span><span class="lit">0</span><span class="pun">]</span><span class="pln">
 array</span><span class="pun">([[</span><span class="pln"> </span><span class="lit">6</span><span class="pun">,</span><span class="pln">  </span><span class="lit">6</span><span class="pun">,</span><span class="pln">  </span><span class="lit">6</span><span class="pun">,</span><span class="pln">  </span><span class="lit">6</span><span class="pun">,</span><span class="pln">  </span><span class="lit">6</span><span class="pun">,</span><span class="pln">  </span><span class="lit">6</span><span class="pun">,</span><span class="pln">  </span><span class="lit">6</span><span class="pun">,</span><span class="pln">  </span><span class="lit">6</span><span class="pun">,</span><span class="pln">  </span><span class="lit">6</span><span class="pun">,</span><span class="pln">  </span><span class="lit">6</span><span class="pun">],</span><span class="pln">
        </span><span class="pun">[</span><span class="lit">25</span><span class="pun">,</span><span class="pln"> </span><span class="lit">34</span><span class="pun">,</span><span class="pln"> </span><span class="lit">22</span><span class="pun">,</span><span class="pln"> </span><span class="lit">11</span><span class="pun">,</span><span class="pln"> </span><span class="lit">12</span><span class="pun">,</span><span class="pln"> </span><span class="lit">25</span><span class="pun">,</span><span class="pln"> </span><span class="lit">41</span><span class="pun">,</span><span class="pln"> </span><span class="lit">23</span><span class="pun">,</span><span class="pln"> </span><span class="lit">25</span><span class="pun">,</span><span class="pln"> </span><span class="lit">25</span><span class="pun">],</span><span class="pln">
@@ -821,10 +743,7 @@ array</span><span class="pun">([[</span><span class="lit">0</span><span class="p
        </span><span class="pun">[</span><span class="lit">0</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">],</span><span class="pln">
        </span><span class="pun">[</span><span class="lit">0</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">]],</span><span class="pln"> dtype</span><span class="pun">=</span><span class="pln">uint8</span><span class="pun">)</span></pre>
 
-<p>Isto tako, možemo određenoj varijabli pridjeliti neki raspon, pa tako ne moramo
-stalno pisati granice raspona, već samo pišemo ime varijable. Bitno je
-naglasiti da se u tom slučaju mijenjanjem vrijednosti varijable mijenja i
-vrijednost originalnog pridjeljenog raspona.</p>
+<p>We can also assign a range to a variable, so we don't have to constantly write the range boundaries; instead, we can just use the variable name. It's important to emphasize that in this case, changing the values of the variable also changes the values of the original assigned range.</p>
 <pre class="prettyprint prettyprinted" style=""><span class="pun">&gt;&gt;&gt;</span><span class="pln"> top_left </span><span class="pun">=</span><span class="pln"> slika</span><span class="pun">[:</span><span class="lit">10</span><span class="pun">,</span><span class="pln"> </span><span class="pun">:</span><span class="lit">10</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">]</span><span class="pln">
 </span><span class="pun">&gt;&gt;&gt;</span><span class="pln"> top_left </span><span class="pun">+=</span><span class="pln"> </span><span class="lit">200</span><span class="pln">
 </span><span class="pun">&gt;&gt;&gt;</span><span class="pln"> top_left
@@ -862,8 +781,7 @@ array</span><span class="pun">([[</span><span class="lit">44</span><span class="
        </span><span class="pun">[</span><span class="lit">44</span><span class="pun">,</span><span class="pln"> </span><span class="lit">44</span><span class="pun">,</span><span class="pln"> </span><span class="lit">44</span><span class="pun">,</span><span class="pln"> </span><span class="lit">44</span><span class="pun">,</span><span class="pln"> </span><span class="lit">44</span><span class="pun">,</span><span class="pln"> </span><span class="lit">44</span><span class="pun">,</span><span class="pln"> </span><span class="lit">44</span><span class="pun">,</span><span class="pln"> </span><span class="lit">44</span><span class="pun">,</span><span class="pln"> </span><span class="lit">44</span><span class="pun">,</span><span class="pln"> </span><span class="lit">44</span><span class="pun">],</span><span class="pln">
        </span><span class="pun">[</span><span class="lit">44</span><span class="pun">,</span><span class="pln"> </span><span class="lit">44</span><span class="pun">,</span><span class="pln"> </span><span class="lit">44</span><span class="pun">,</span><span class="pln"> </span><span class="lit">44</span><span class="pun">,</span><span class="pln"> </span><span class="lit">44</span><span class="pun">,</span><span class="pln"> </span><span class="lit">44</span><span class="pun">,</span><span class="pln"> </span><span class="lit">44</span><span class="pun">,</span><span class="pln"> </span><span class="lit">44</span><span class="pun">,</span><span class="pln"> </span><span class="lit">44</span><span class="pun">,</span><span class="pln"> </span><span class="lit">44</span><span class="pun">]],</span><span class="pln"> dtype</span><span class="pun">=</span><span class="pln">uint8</span><span class="pun">)</span></pre>
 
-<p>Ukoliko ne želimo da se mijenjanjem varijable mijenjaju i originalne
-vrijednosti raspona, možemo kopirati vrijednosti raspona na drugu lokaciju.</p>
+<p>If we do not want changes to the variable to also change the original range values, we can copy the range values to another location.</p>
 <pre class="prettyprint prettyprinted" style=""><span class="pun">&gt;&gt;&gt;</span><span class="pln"> top_left </span><span class="pun">=</span><span class="pln"> slika</span><span class="pun">[:</span><span class="lit">10</span><span class="pun">,:</span><span class="lit">10</span><span class="pun">,</span><span class="lit">0</span><span class="pun">].</span><span class="pln">copy</span><span class="pun">()</span><span class="pln">
 </span><span class="pun">&gt;&gt;&gt;</span><span class="pln"> top_left </span><span class="pun">*=</span><span class="pln"> </span><span class="lit">2</span><span class="pln">
 </span><span class="pun">&gt;&gt;&gt;</span><span class="pln"> top_left
@@ -889,21 +807,17 @@ array</span><span class="pun">([[</span><span class="lit">44</span><span class="
        </span><span class="pun">[</span><span class="lit">44</span><span class="pun">,</span><span class="pln"> </span><span class="lit">44</span><span class="pun">,</span><span class="pln"> </span><span class="lit">44</span><span class="pun">,</span><span class="pln"> </span><span class="lit">44</span><span class="pun">,</span><span class="pln"> </span><span class="lit">44</span><span class="pun">,</span><span class="pln"> </span><span class="lit">44</span><span class="pun">,</span><span class="pln"> </span><span class="lit">44</span><span class="pun">,</span><span class="pln"> </span><span class="lit">44</span><span class="pun">,</span><span class="pln"> </span><span class="lit">44</span><span class="pun">,</span><span class="pln"> </span><span class="lit">44</span><span class="pun">],</span><span class="pln">
        </span><span class="pun">[</span><span class="lit">44</span><span class="pun">,</span><span class="pln"> </span><span class="lit">44</span><span class="pun">,</span><span class="pln"> </span><span class="lit">44</span><span class="pun">,</span><span class="pln"> </span><span class="lit">44</span><span class="pun">,</span><span class="pln"> </span><span class="lit">44</span><span class="pun">,</span><span class="pln"> </span><span class="lit">44</span><span class="pun">,</span><span class="pln"> </span><span class="lit">44</span><span class="pun">,</span><span class="pln"> </span><span class="lit">44</span><span class="pun">,</span><span class="pln"> </span><span class="lit">44</span><span class="pun">,</span><span class="pln"> </span><span class="lit">44</span><span class="pun">]],</span><span class="pln"> dtype</span><span class="pun">=</span><span class="pln">uint8</span><span class="pun">)</span></pre>
 
-<p>Još jedna jako korisna mogućnost Pythona i Numpy-a pri radu s poljima je
-mogučnost korištenja uvjeta unutar <code class="prettyprint lang- prettyprinted" style=""><span class="pun">[</span><span class="pln"> </span><span class="pun">]</span></code> (uglatih zagrada).</p>
-<pre class="prettyprint prettyprinted" style=""><span class="pln">slika</span><span class="pun">[</span><span class="pln">slika</span><span class="pun">&lt;</span><span class="lit">100</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="lit">255</span></pre>
+<p>Another very useful feature of Python and NumPy when working with arrays is the ability to use conditions within <code class="prettyprint lang- prettyprinted" style=""><span class="pun">[</span><span class="pln"> </span><span class="pun">]</span></code> (square brackets).</p>
+<pre class="prettyprint prettyprinted" style=""><span class="pln">image</span><span class="pun">[</span><span class="pln">image</span><span class="pun">&lt;</span><span class="lit">100</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="lit">255</span></pre>
 
-<p>Ova linija će proći kroz sve vrijednosti unutar arraya slika i provjeravat će
-jednu po jednu vrijednost, te ako je manja od 100 postavit će tu vrijednost na
-255. </p>
-<h4>Spremanje slika</h4>
-<p>Moguće je spremati slike, openCV automatski određuje oblik i format slike
-ovisno o parametrima predanim funkciji za spremanje slika. Parametri su naziv
-filea i numpy polje koje treba spremiti. </p>
+<p>This line will iterate through all the values in the image array, check each value, and if it is less than 100, it will set that value to 255.</p>
+
+<h4>Saving Images</h4>
+<p>It is possible to save images, and OpenCV automatically determines the type and format of the image based on the parameters passed to the image-saving function. The parameters are the filename and the NumPy array that needs to be saved.</p>
 <pre class="prettyprint prettyprinted" style=""><span class="pln">cv2</span><span class="pun">.</span><span class="pln">imwrite</span><span class="pun">(</span><span class="str">"slika.jpg"</span><span class="pun">,</span><span class="pln"> slika</span><span class="pun">)</span><span class="pln">
 cv2</span><span class="pun">.</span><span class="pln">imwrite</span><span class="pun">(</span><span class="str">"dioslike.jpg"</span><span class="pun">,</span><span class="pln"> slika</span><span class="pun">[:</span><span class="lit">100</span><span class="pun">,:</span><span class="lit">100</span><span class="pun">,:])</span></pre>
 
-<h4>Prikaz slike na ekranu</h4>
+<h4>Display the image on the screen</h4>
 <pre class="prettyprint prettyprinted" style=""><span class="pln">cv2</span><span class="pun">.</span><span class="pln">imshow</span><span class="pun">(</span><span class="str">'title'</span><span class="pun">,</span><span class="pln"> img</span><span class="pun">)</span><span class="pln">
 cv2</span><span class="pun">.</span><span class="pln">waitKey</span><span class="pun">(</span><span class="lit">0</span><span class="pun">)</span><span class="pln">
 cv2</span><span class="pun">.</span><span class="pln">destroyAllWindows</span><span class="pun">()</span></pre>
