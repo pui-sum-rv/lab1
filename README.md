@@ -1,3 +1,53 @@
+# Introduction to Jupyter Notebook
+
+A Jupyter Notebook consists of two types of cells: text and code. You are currently reading a text cell, which can contain text, markdown, or HTML. It is useful for adding more information about your code, allowing the notebook to be read as a narrative, which is where the name Jupyter Notebook comes from.
+
+Code cells contain Python code or command-line commands.
+```
+text = "You write your code in code block like this one"
+# These code cells will always display the result of the last line of code below the cell.
+text
+```
+
+You can execute code cells by selecting them with your mouse and pressing the play button in the upper left corner of the cell. You can also run the cell and move to the next one with the shortcut **Shift+Enter**. **Control+Enter** will execute the current cell and keep it selected.
+
+The output of code cells appears below the cell. It can include outputs from ,print statements, as well as graphs and images generated using libraries like OpenCV or matplotlib.
+
+Additionally, the result of the last line of code is always displayed at the end of the output.
+
+Feel free to experiment with the code cells and modify this notebook however you like!
+
+**For more tips** check out the following notebook: https://colab.research.google.com/notebooks/basic_features_overview.ipynb
+
+## Order of execution
+
+It's important to remember that cells are executed in the order in which you run them. For example, take a look at the following 3 cells:
+```
+a = 3 # Block 1
+```
+
+```
+a = 2 # Block 2
+```
+
+```
+a # Block 3
+```
+
+Try running cell 2 first, then cell 1, and finally cell 3. You will notice that the output of cell 3 changes because cell 1 was executed and a was assigned a new value. This behavior can lead to bugs in your code. Therefore, it is good practice to periodically, and especially before submission, run all cells in order again. You can do this by clicking ***Runtime > Run** all or pressing F9.
+
+## Importing libraries
+
+For completing lab exercises, you'll need various libraries such as numpy, OpenCV, matplotlib, etc. It's good practice to have a separate cell for importing all the required libraries at the beginning of the notebook. Example:
+
+```
+import numpy as np
+import cv2 as cv
+import matplotlib.pyplot as plot
+```
+
+This way, you ensure that the cell is always executed, and all the necessary libraries are loaded. Additionally, once these libraries are loaded, Google Colab will provide suggestions (auto-complete) as you type, which will significantly ease your work.
+
 # Digital Image Processing vs. Computer Vision
 
 To begin with, Computer Graphics creates a mathematical or geometric model from an original captured image to produce a digital image. However, it's important not to confuse this with Digital Image Processing or the field of Computer Vision, even though they complement each other. Digital Image Processing results in a modified version of the image, whereas Computer Vision provides a meaningful interpretation of the image using Artificial Intelligence techniques.
