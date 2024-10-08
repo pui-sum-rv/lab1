@@ -55,17 +55,13 @@ To begin with, Computer Graphics creates a mathematical or geometric model from 
 Nevertheless, to sucessfully deal with Computer Vision, we need to know some stuff from Image Processing field.
 
 ## So, how we digitize an image?
-Simply put, the process of sampling (digitizing coordinate values of
-) + quantization (digitizing amplitude values
-) will generate an digital image
-, where the function represents intesity / gray level and the coordinate represents picture element (known as pixel).
+Simply put, the process of sampling (digitizing coordinate values of) + quantization (digitizing amplitude values) will generate an digital image, where the function represents intesity / gray level and the coordinate represents picture element (known as pixel).
 
 ![digitizing](https://i.postimg.cc/G2r5cPg3/digitizing.png)
 
 Therefore, the digital image can be simply coded in a matrix form as:
 
-
-\begin{bmatrix} f(0, 0) & f(0, 1) & ... & f(0, N-1) \\ f(1, 0) & f(1, 1) & ... & f(1, N-1) \\ \vdots & \vdots & \ddots & \vdots \\ f(M-1, 0) & f(M-1, 1) & ... & f(M-1, N-1) \end{bmatrix}
+![image](https://github.com/user-attachments/assets/bb47cf76-7549-4b94-97da-d0bb7a1c3c8c)
 
 where M is number of rows and N is number of columns. Since we'll use Python, the pixel starts from (0,0) and ends in (M-1, N-1).
 
@@ -102,7 +98,7 @@ Solve the following tasks within this Jupyter Notebook, ensuring that the result
 
 # Color spaces
 
-In this lab, you'll get familiar with image color spaces. On the web and in general usage, most images are encoded as **RGB**: **R**ed, **G**reen, and **B**lue. OpenCV generally uses **BGR**: Blue, Green, Red.
+In this part of a lab, you'll get familiar with image color spaces. On the web and in general usage, most images are encoded as **RGB**: **R**ed, **G**reen, and **B**lue. OpenCV generally uses **BGR**: Blue, Green, Red.
 
 This is just one of the many ways we can represent an image. In an RGB image, we get a pixel by mixing the three colors. We can get the same pixel by using different numbers and formulae to combine them. For instance, the **CMYK** color space encodes each pixel in 4 primary colors: **C**yan, **M**agenta, **Y**ellow and **K**ey (Black). Since printers use these primary colors, CMYK is often used when preparing images for print.
 
@@ -112,7 +108,7 @@ Not all color spaces consist only of primary colors. For instance, **HSV** (**H*
 
 You can think of the whole HSV color space as a cylinder. The height on the cylinder corresponds to how dark the pixel is, the distance from the center tells you how non-gray it is, and the angle tells you which color the pixel is.
 
-There are many color spaces each with its uses. One other color space we'll mention in **YCbCr**. Y is the **luma** component, similar to the Value in HSV. Cb is the **blue-difference chroma component**, i.e. how blue should this pixel be tinted. Similarly, Cr is the **red-difference chroma component**, which tells you how much should a pixel be tinted red. Even with a different type of representation, each YCbCr is capable of showing all RGB images.
+There are many color spaces each with its uses. One other color space we'll mention is **YCbCr**. Y is the **luma** component, similar to the Value in HSV. Cb is the **blue-difference chroma component**, i.e. how blue should this pixel be tinted. Similarly, Cr is the **red-difference chroma component**, which tells you how much should a pixel be tinted red. Even with a different type of representation, each YCbCr is capable of showing all RGB images.
 
 ![ycbc](https://i.postimg.cc/w38tBfgD/rgb-to-ycrcb.png)
 
