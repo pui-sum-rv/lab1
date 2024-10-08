@@ -130,7 +130,7 @@ In these exercises, you will familiarize yourself with the basics of different c
 
 ## Task 1
 
-Load the image images/peppers.png using OpenCV and convert it to the HSV color space using the aforementioned function. Then, add 30 to the H (hue) channel of the HSV image for each pixel. Convert that image back to RGB and display it.
+Load the image `images/peppers.png` using OpenCV and convert it to the HSV color space using the aforementioned function. Then, add 30 to the H (hue) channel of the HSV image for each pixel. Convert that image back to RGB and display it.
 
 ## Task 2
 
